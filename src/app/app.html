@@ -1,29 +1,23 @@
-<h1>คะแนนปัจจุบัน: {{count()}}</h1>
-<button (click)="increase()" [disabled]="count() === 10">+ กดเพิ่มคะแนน</button>
-<button (click)="decrease()" [disabled]="count() === 0">- กดลบคะแนน</button>
-<br><br>
-@if (count() < 0) { <h3 style="color: red;">
-  ⚠️ เตือน: สต็อกติดลบไม่ได้นะครับ!
-  </h3>
-  }
+<app-navbar></app-navbar>
 
-  @if (count() >= 10) {
-  <h3 style="color: green;">
-    เต็มแม็กซ์แล้วจ้า!
-  </h3>
-  }
-
-  <hr>
-  <h2>📦 รายการสินค้าในสต็อก</h2>
-  <input #productInput placeholder="กรอกชื่อสินค้า..."/>
-  <button (click)="addProduct(productInput.value); productInput.value = '' ">
-    💾 บันทึก
-  </button>
-  <hr>
-  <ul>
-    @for (item of products(); track item) {
-      <li>
-        {{ item }}
-      </li>
+<div style="padding: 20px;">
+  <h1>คะแนนปัจจุบัน: {{count()}}</h1>
+  <button (click)="increase()" [disabled]="count() === 10">+ กดเพิ่มคะแนน</button>
+  <button (click)="decrease()" [disabled]="count() === 0">- กดลบคะแนน</button>
+  <br><br>
+  @if (count() < 0) { <h3 style="color: red;">
+    ⚠️ เตือน: สต็อกติดลบไม่ได้นะครับ!
+    </h3>
     }
-  </ul>
+
+    @if (count() >= 10) {
+    <h3 style="color: green;">
+      เต็มแม็กซ์แล้วจ้า!
+    </h3>
+    }
+
+    <hr>
+    
+    <app-product-list></app-product-list>
+
+</div>

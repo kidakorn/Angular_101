@@ -1,0 +1,15 @@
+.my-navbar {
+	background-color: #003366;
+	color: white;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	margin-left: 20px;
+	font-weight: bold;
+}

@@ -1,0 +1,12 @@
+<h2>📦 รายการสินค้าในสต็อก</h2>
+<input #productInput placeholder="กรอกชื่อสินค้า..." />
+<button (click)="addProduct(productInput.value); productInput.value = '' ">
+	💾 บันทึก
+</button>
+<ul>
+	@for (item of products(); track item) {
+	<li>
+		{{ item }}
+	</li>
+	}
+</ul>

@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Navbar } from './navbar/navbar';
+import { ProductList } from "./product-list/product-list";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, Navbar, ProductList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -20,21 +22,6 @@ export class App {
 
   decrease() {
     this.count.update(value => value - 1)
-  }
-
-  products = signal([
-    'เมาส์ไร้สาย',
-    'คีย์บอร์ด',
-    'หน้าจอ monitor',
-    'สาย HDMI',
-  ]);
-
-  // รับค่า name ที่ส่งมาจากหน้าจอ (ระบุว่าเป็น string)
-  addProduct(name: string){
-    if (name === '') return; // ถ้าไม่ได้พิมพ์อะไรมา ไม่ต้องทำต่อ
-    // การอัปเดต Array ใน Signal
-    // เราเอาของเก่า (...) มารวมกับของใหม่ (name)
-    this.products.update(oldItem => [...oldItem, name]);
   }
 
 }
