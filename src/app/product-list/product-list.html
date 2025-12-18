@@ -4,9 +4,20 @@
 	💾 บันทึก
 </button>
 <ul>
-	@for (item of products(); track item) {
+	@for (item of products(); track item.id) {
 	<li>
-		{{ item }}
+		<span>{{ item.name }}</span>
+
+		<span style="color: green; font-weight: bold; margin-left: 10px;">฿{{ item.price }}</span>
+		@if (!item.inStock) {
+		<span style="color: red; margin-left: 10px;">(หมด)</span>
+		}
+		<button (click)="removeProduct(item.id)" style="background-color: red; margin-left: 10px;">ลบ ❌</button>
 	</li>
 	}
 </ul>
+<hr>
+<h3 style="text-align: right;">
+	มูลค่ารวมในสต็อก:
+	<span style="color: blue; font-size: 1.5rem;">฿ {{ totalPrice() }}</span>
+</h3>
