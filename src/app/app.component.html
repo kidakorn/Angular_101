@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div style="padding: 20px;">
-  <h1>คะแนนปัจจุบัน: {{count()}}</h1>
+  <!-- <h1>คะแนนปัจจุบัน: {{count()}}</h1>
   <button (click)="increase()" [disabled]="count() === 10">+ กดเพิ่มคะแนน</button>
   <button (click)="decrease()" [disabled]="count() === 0">- กดลบคะแนน</button>
   <br><br>
@@ -16,8 +16,8 @@
     </h3>
     }
 
-    <hr>
+    <hr> -->
     
-    <app-product-list></app-product-list>
+    <router-outlet></router-outlet>
 
 </div>

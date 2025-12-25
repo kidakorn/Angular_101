@@ -1,0 +1,24 @@
+<div class="checkout-container">
+	<h2>ที่อยู่จัดส่งสินค้า</h2>
+
+	<form (ngSubmit)="submitOrder()">
+
+		<div class="form-group">
+			<label>ชื่อ-นามสกุล:</label>
+			<input type="text" [(ngModel)]="name" name="name" placeholder="กรอกชื่อของคุณ" required>
+		</div>
+
+		<div class="form-group">
+			<label>ที่อยู่จัดส่ง:</label>
+			<textarea [(ngModel)]="address" name="address" rows="3" placeholder="ที่อยู่ของคุณ" required></textarea>
+		</div>
+
+		<div class="form-group">
+			<label>เบอร์โทรศัพท์:</label>
+			<input type="tel" [(ngModel)]="phone" name="phone" placeholder="08x-xxx-xxxx" required>
+		</div>
+
+		<button type="submit" class="confirm-btn">ยืนยันการสั่งซื้อ</button>
+
+	</form>
+</div>

@@ -1,0 +1,28 @@
+<div class="cart-container">
+	<h2>🛒 ตะกร้าสินค้าของฉัน</h2>
+
+	@if (productService.cartItems().length === 0) {
+	<div class="empty-state">
+		<p>ไม่มีสินค้าในตะกร้า...!</p>
+		<a routerLink="/" class="back-link">กลับไปหน้าสินค้า</a>
+	</div>
+	} @else {
+	<ul class="cart-list">
+		@for (item of productService.cartItems(); track $index) {
+		<li class="cart-item">
+			<img [src]="item.image" [alt]="item.name" class="cart-item-img" loading="lazy">
+			<span class="item-name">{{ item.name }}</span>
+			<span class="item-price">฿ {{ item.price }}</span>
+		</li>
+		}
+	</ul>
+	<div class="summary-section">
+		<div class="total-row">
+			<span>ยอดรวมทั้งหมด:</span>
+			<span class="total-price">฿{{ productService.cartTotal() }}</span>
+		</div>
+
+		<button routerLink="/checkout" class="checkout-btn">ชำระเงิน</button>
+	</div>
+	}
+</div>
